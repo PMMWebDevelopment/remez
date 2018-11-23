@@ -1,0 +1,22 @@
+<div id="letter" class="page-content pb-1">
+    <div id="letter-header" class="container-fluid">
+        <div id="letter_bar" class="row d-flex flex-row justify-content-center flex-wrap">
+            <div class="row d-flex flex-row justify-content-end flex-wrap">
+                <!-- Letter Buttons -->
+                <button *ngFor="let letter of letters" class="btn btn-primary btn-lg m-1" (click)="getLetter(letter.namelat)" role="button" [routerLink]="['/letter/', letter.namelat]"><b>{{ letter.glyph }}</b></button>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="row d-flex flex-column flex-md-row letter-commentary px-1">
+                <div class="d-flex flex-md-row w-100 w-25-md flex-column align-items-center">
+                    <div class="glyph-serif m-2">{{ letter?.glyph }}{{ letter?.glyphfinal ? letter?.glyphfinal : null }}</div>
+                    <div class="glyph-sansserif m-2">{{ letter?.glyph }}{{ letter?.glyphfinal ? letter?.glyphfinal : null }}</div>
+                    <div class="glyph-cursive m-2">{{ letter?.glyph }}{{ letter?.glyphfinal ? ' ' + letter?.glyphfinal : null }}</div>
+                    <div class="glyph-name-lat m-2"><b><i>{{ letter?.namelat }}</i></b></div>
+                    <div class="glyph-name-heb m-2"><b>{{ letter?.nameheb }}</b></div>
+                </div>
+                <div class="d-flex w-100 w-75-md flex-column flex-row-md" innerHTML="{{ commentary }}"></div>
+            </div>
+        </div>
+    </div>
+</div>

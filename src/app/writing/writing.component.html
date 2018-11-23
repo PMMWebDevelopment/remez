@@ -1,0 +1,20 @@
+<div id="writing" class="page-content pb-1">
+    <div id="writing-header" class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h1 class="page-title">Hebrew Writing</h1>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="row writing-commentary px-1">
+                <p>A large part of the mystery of Hebrew lies in its writing. It uses an alphabet which has been largely unchanged for over 2,000 years, and bears little resemblence to any other scripts, particularly Latin and Greek. However, these and other alphabets such as Arabic, all trace their origins back to the ancient civilisations of the Middle East, so the range of sounds represented by Hebrew writing is not so alien to English speakers.</p>
+                <p>Two things about Hebrew writing are important to bear in mind from the get-go: one is that there are, strictly speaking, no vowels; the other is that Hebrew is written from right-to-left, and even Hebrew books have a front cover where westerners would expect to find the back cover.</p>
+                <p>There are 22 letters in the Hebrew alphabet. Click on one of them below to read more about them. If you want to take them in alphabetical order, just to get you in the mood, start on the right!</p>
+            </div>
+            <div class="row d-flex flex-row justify-content-end flex-wrap">
+                <!-- Letter Buttons -->
+                <button *ngFor="let letter of letters" class="btn btn-primary btn-lg m-1" role="button" [routerLink]="['/letter/', letter.namelat]"><b>{{ letter.glyph }}</b></button>
+            </div>
+        </div>
+    </div>
+</div>

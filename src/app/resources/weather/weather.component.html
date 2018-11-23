@@ -1,0 +1,53 @@
+<div id="weather" class="page-content pb-1">
+  <div id="weather-header" class="container-fluid">
+      <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <h1 class="page-title">Weather in Hebrew</h1>
+          </div>
+      </div>
+      <div class="jumbotron p-1">
+        <div class="d-flex flex-column flex-md-row">
+          
+          <!-- DATES -->
+          <div class="d-flex w-100 flex-column w-md-50 m-1">
+
+            <div class="weather-commentary">
+              <p>Here are some phrases which can come in handy for talking about the weather in Hebrew.</p>
+            </div>
+
+            <div class="d-flex justify-content-center w-100">
+              <div class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="weather_hebrew">?מה מזג האביר היום</div>
+                  <div class="weather_latin"><i>Mah mzeg ha-aveer ha-yom?</i></div>
+                  <div class="weather_latin">How's the weather today?</div>
+                </div>
+              </div>
+              <div class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="weather_hebrew">?מה יהיה מזג האויר מחר</div>
+                  <div class="weather_latin"><i>Mah yiheyeh mzeg ha-avir ha-yom?</i></div>
+                  <div class="weather_latin">How will the weather be tomorrow?</div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="d-flex flex-row flex-wrap justify-content-center w-100">
+              <div *ngFor="let expression of weatherExpressions" class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="weather_hebrew">{{ expression.he }}</div>
+                  <div class="weather_latin"><i>{{ expression.la }}</i></div>
+                  <div class="weather_latin">{{ expression.equiv }}</div>
+                </div>
+              </div>
+            </div>    
+            
+            <!-- ?	mah y'heeyeh mezeg ha'aveer makhar	 -->
+<!-- מה יהיה מזג האויר מחר? -->
+
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

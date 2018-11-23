@@ -1,0 +1,36 @@
+#sports {
+    background-image: url('../../../assets/images/maccabihaifa.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.sports-commentary{
+    text-align: left;
+}
+
+.alert {
+    display: block;
+    min-width: fit-content;
+    height: fit-content;
+}
+
+.sport_hebrew,
+.sport_latin {
+    color: #003bbf;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.sport_hebrew {
+    font-size: 24px;
+}
+
+.sport_latin {
+    font-size: 14px;
+}

@@ -1,0 +1,52 @@
+#grammar_point {
+    background-image: url('../../../assets/images/tel-aviv.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    min-height: 100%;
+}
+
+#grammar_point_bar {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 80px;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.jumbotron {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.jumbotron_header {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.grammar_point_commentary {
+    text-align: left;
+}
+
+.example_hebrew,
+.example_latin,
+.example_english {
+    color: #003bbf;
+    font-weight: bold;
+}
+
+.example_hebrew {
+    font-size: 24px;
+}
+
+.example_english {
+    font-size: 16px;
+}
+
+.example_latin {
+    font-size: 14px;
+}

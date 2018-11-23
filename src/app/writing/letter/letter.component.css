@@ -1,0 +1,49 @@
+#letter {
+    background-image: url('../../../assets/images/tallit.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    min-height: 100%;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.jumbotron {
+    padding-top: 0px;
+}
+
+.letter-commentary {
+    text-align: left;
+}
+
+.glyph-serif,
+.glyph-sansserif,
+.glyph-cursive {
+    font-size: 6rem;
+    font-weight: bold;
+
+}
+
+.glyph-sansserif {
+    font-family: 'Times New Roman', serif;
+}
+
+.glyph-cursive {
+    font-family: 'Gveret Levin', serif;
+}
+
+.glyph-name-heb {
+    font-size: 2rem;
+}
+
+.glyph-name-lat {
+    font-size: 3rem;
+}
+
+#letter_bar {
+    width: 100%;
+    margin: 0 auto;
+}
+

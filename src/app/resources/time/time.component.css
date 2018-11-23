@@ -1,0 +1,55 @@
+#time {
+    background-image: url('../../../assets/images/menorah.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.time-commentary{
+    text-align: left;
+}
+
+.alert {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+
+.time_hebrew,
+.time_latin {
+    color: #003bbf;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.time_hebrew {
+    font-size: 24px;
+}
+
+.time_latin {
+    font-size: 14px;
+}
+
+.date_plus_minus {
+    height: 40px;
+    width: 40px;
+}
+
+.date_input {
+    height: 40px;
+    width: 25px;
+}
+
+.select_month {
+    width: 150px;
+}
+
+.calendar {
+    height: 100px;
+}
+

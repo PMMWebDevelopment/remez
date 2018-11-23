@@ -1,0 +1,36 @@
+<div id="grammar_point" class="page-content pb-1">
+    <div class="container-fluid">
+      <div id="grammar_point_bar" class="row d-flex flex-nowrap">
+        <!-- Grammar Point Buttons -->
+        <button *ngFor="let point of grammarPoints" id="grammar_point_{{ point.display_no }}" class="btn btn-primary btn-lg m-1" (click)="getGrammarPoint(point.display_no)" role="button" [routerLink]="['/grammarpoint/', point.display_no]"><b>{{ point.name }}</b></button>
+      </div>
+      <div class="jumbotron">
+          <div class="jumbotron_header">{{ grammarPoint?.display_no}}. {{ grammarPoint?.name }}</div>
+          <div *ngIf="grammarPoint?.layout === 'n'" class="p-2">
+            <div class="grammar_point_commentary" innerHTML="{{ commentary }}"></div>
+          </div>
+          <div *ngIf="grammarPoint?.layout === 'l'" class="d-flex flex-column p-2">
+            <div class="grammar_point_commentary" innerHTML="{{ commentary }}"></div>
+            <!-- EXAMPLES -->
+            <div class="grammar_point_examples d-flex flex-row flex-wrap justify-content-center align-content-start">
+              <div *ngFor="let example of examples" class="alert alert-info m-1 d-flex flex-column" role="alert">
+                <div class="example_hebrew">{{ example.he }}</div>
+                <div class="example_latin"><i>{{ example.trans }}</i></div>
+                <div class="example_english"><b>{{ example.en }}</b></div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="grammarPoint?.layout === 'p'" class="d-flex flex-md-row flex-column p-2">
+            <div class="grammar_point_commentary w-md-50 w-100" innerHTML="{{ commentary }}"></div>
+            <!-- EXAMPLES -->
+            <div class="grammar_point_examples d-flex flex-row flex-wrap justify-content-center align-content-start w-md-50 w-100">
+              <div *ngFor="let example of examples" class="alert alert-info m-1 d-flex flex-column" role="alert">
+                <div class="example_hebrew">{{ example.he }}</div>
+                <div class="example_latin"><i>{{ example.trans }}</i></div>
+                <div class="example_english"><b>{{ example.en }}</b></div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

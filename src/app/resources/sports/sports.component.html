@@ -1,0 +1,30 @@
+<div id="sports" class="page-content pb-1">
+  <div id="sports-header" class="container-fluid">
+      <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <h1 class="page-title">Sports and Games in Hebrew</h1>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <div class="row sports-commentary px-1">
+              <p>Here are the Hebrew names for a number of popular sports and games. Note that athletics is singular in Hebrew when it is plural in English. Darts is definitely singular in Hebrew, whereas it only <i>appears</i> at first to be plural in English. Also, be careful not get swimming and skiing mixed up: -</p>
+          </div>
+          <div class="row d-flex flex-row justify-content-around flex-wrap">
+            <div *ngFor="let sport of sports" class="alert alert-info m-1 p-1" role="alert">
+              <div class="d-flex flex-row align-items-center">
+                <div class="flag_container p-1">
+                  <img src="{{ sport.icon }}">
+                </div>
+                <div class="d-flex flex-column">
+                  <div>
+                    <div class="sport_hebrew">{{ sport.heb }}</div>
+                    <div class="sport_latin"><i>{{ sport.lat }}</i></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <small>Photo of Maccabi Haifa F.C. in play by Grzegorz Jereczek from Gdańsk, Poland (Bayern Munich vs Maccabi Haifa) [<a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0 </a>], <a href="https://commons.wikimedia.org/wiki/File:Bayern_Munich_vs_Maccabi_Haifa_(4136842616).jpg">via Wikimedia Commons</a>. Icons for skiing, tennis, darts, soccer, golf, checkered flag, swimming, billiards/snooker, handball, horse riding, squash, backgammon, running, chess and gymnastics rings made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>. Icon for surfing made by <a href="https://www.flaticon.com/authors/scott-de-jonge" title="Scott de Jonge">Scott de Jonge</a>. Icon for cycling made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a>. Icon for ice hockey made by <a href="https://www.flaticon.com/authors/vitaly-gorbachev" title="Vitaly Gorbachev">Vitaly Gorbachev</a>. All from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> and licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>.</small>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="colours" class="page-content pb-1">
+    <div id="colours-header" class="container-fluid">
+      <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <h1 class="page-title">Colours</h1>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <div class="row d-flex flex-row justify-content-around flex-wrap">
+            <div *ngFor="let colour of colours" class="p-2 d-flex flex-column shadow" [ngStyle]="{ 'background-color': colour.background, 'color': colour.textcolour }">
+              <div class="colour_hebrew">{{ colour.heb }}</div>
+              <div class="colour_latin"><i>{{ colour.lat }}</i></div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>

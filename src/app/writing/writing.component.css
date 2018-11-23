@@ -1,0 +1,15 @@
+#writing {
+    background-image: url('../../assets/images/writing.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.writing-commentary{
+    text-align: left;
+}

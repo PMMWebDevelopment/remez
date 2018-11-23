@@ -1,0 +1,100 @@
+<div id="verbs" class="page-content pb-1">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      <div>
+        <h1 class="page-title">Verbs</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="jumbotron m-2 d-flex flex-column p-2">
+        <div class="d-flex justify-content-center">
+          <h6>Choose a verb from the dropdown list on the left and see its full pattern of different forms.</h6>
+        </div>
+        <div class="d-flex flex-column flex-md-row">
+          <div class="d-flex flex-column verb_selector_panel">
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select verb
+              </button>
+              <div
+                class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                data-boundary="window"
+                style="overflow-y: auto;">
+                  <a class="dropdown-item" (click)="setVerb(verb.id)" *ngFor="let verb of verbs"><b>{{ verb?.root }}</b> <i> {{ verb?.rootla }}</i> - {{ verb?.en }}</a>
+              </div>
+            </div>
+            <div *ngIf="chosenVerbID" class="d-flex flex-column" id="tense-selector">
+              <b>Tenses and moods: -</b>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="chosenTense" type="radio" name="tenses" id="present-tense" value="present" checked>
+                <label class="form-check-label" for="presentTense">
+                  Present
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="chosenTense" type="radio" name="tenses" id="past-tense" value="past">
+                <label class="form-check-label" for="pastTense">
+                  Past
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="chosenTense" type="radio" name="tenses" id="future-tense" value="future">
+                <label class="form-check-label" for="futureTense">
+                  Future
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="chosenTense" type="radio" name="tenses" id="imperatives" value="imperatives">
+                <label class="form-check-label" for="imperatives">
+                  Imperative
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="chosenTense" type="radio" name="tenses" id="particples" value="participles">
+                <label class="form-check-label" for="participles">
+                  Participle
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="chosenTense" type="radio" name="tenses" id="other-forms" value="other">
+                <label class="form-check-label" for="otherForms">
+                  Other Forms
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column w-100">
+            <div class="d-flex flex-column align-items-center w-100 verb-header" *ngIf='chosenVerbID'>
+              <div>
+                <span class="mr-1">
+                  <b>{{ verbs[+chosenVerbID - 1].root }}</b></span><span class="mr-1"><i>{{ verbs[+chosenVerbID - 1].rootla }}</i>
+                </span> - {{ verbs[+chosenVerbID - 1].en }} 
+              </div>
+              <div><small>binyan: {{ verbs[+chosenVerbID - 1].binyan }}</small></div>
+            </div>
+              <div [ngSwitch]="chosenTense" class="w-100">
+                <div *ngSwitchCase="'present'">
+                  <app-present-tense [presentTense]="presentTense"></app-present-tense>
+                </div>
+                <div *ngSwitchCase="'past'">
+                  <app-past-tense [pastTense]="pastTense"></app-past-tense>
+                </div>
+                <div *ngSwitchCase="'future'">
+                  <app-future-tense [futureTense]="futureTense"></app-future-tense>
+                </div>
+                <div *ngSwitchCase="'imperatives'">
+                  <app-imperatives [imperatives]="imperatives"></app-imperatives>
+                </div>
+                <div *ngSwitchCase="'participles'">
+                  <app-participles [participles]="participles"></app-participles>
+                </div>
+                <div *ngSwitchCase="'other'">
+                  <app-other-forms [otherForms]="otherForms"></app-other-forms>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="grammar" class="page-content pb-1">
+  <div id="grammar-header" class="container-fluid">
+      <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <h1 class="page-title">Hebrew Grammar</h1>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <div class="row grammar-commentary px-1">
+              <p>Now, let's get down to business with Hebrew grammar. It's not all that difficult for foreign learners, whatever their first language: there are no complicated noun declensions like in Russian, and everything else is relatively regular once you learn the basic rules. The trickiest part is learning how the verbs work, but once you've mastered the basic patterns, the rest should follow quite easily.</p>
+          </div>
+          <div class="row d-flex flex-row justify-content-between flex-wrap">
+                <button *ngFor="let grammarPoint of grammarPoints" class="btn btn-primary btn-sm m-1" [routerLink]="['/grammarpoint/', grammarPoint.display_no]" role="button" ><b>{{ grammarPoint.name }}</b></button>
+          </div>
+      </div>
+  </div>
+</div>

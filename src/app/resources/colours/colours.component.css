@@ -1,0 +1,25 @@
+#colours {
+    background-image: url('../../../assets/images/world.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.colour_hebrew,
+.colour_latin {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.colour_hebrew {
+    font-size: 24px;
+}
+
+.colour_latin {
+    font-size: 14px;
+}

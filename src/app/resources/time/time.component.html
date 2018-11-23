@@ -1,0 +1,221 @@
+<div id="time" class="page-content pb-1">
+  <div id="time-header" class="container-fluid">
+      <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <h1 class="page-title">Dates and Time in Hebrew</h1>
+          </div>
+      </div>
+      <div class="jumbotron p-1">
+        <div class="d-flex flex-column flex-md-row">
+          
+          <!-- DATES -->
+          <div class="d-flex w-100 flex-column w-md-50 m-1">
+            
+            <div>
+              <h2>
+                <b>Dates</b>
+              </h2>
+            </div>
+
+            <div class="time-commentary">
+              <p>There are two calendars in use in Israel, the traditional Jewish calendar, which is based on lunar months, and the Gregorian calendar. The Jewish calendar shares much of its background and its construction with its Islamic counterpart, and both systems are adhered to by traditionalists in either faith. The Jewish calendar is also the primary official one in use in Israel, partly because it governs when Jewish holidays occur. There are some purposes, however, for which the Gregorian calendar is used, e.g. for determining the start and end of Israeli Summer Time.</p>
+
+              <p>The months of the Jewish year are as follows, with an approximation of where they fall in the Gregorian year: -</p>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-center w-100">
+              <div *ngFor="let month of jewishMonthStrings" class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">{{ month.he }}</div>
+                  <div class="time_latin"><i>{{ month.la }}</i></div>
+                  <div class="time_latin">{{ month.equiv }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="time-commentary">
+              <p>The Jewish calendar is a little more complicated than the Gregorian one in that the resulting year is around eleven days shorter than the true solar year. Therefore, in seven out of every 19 years, the last month of the Jewish year, <b>אדר <i>Adar</i></b>, is repeated. When this occurs, the first "edition" of the month is considered to be the "leap" element, so that any high days normally occurring in <i>Adar</i> do so in the second "edition". This most usually affects the festival of <b>פורים <i>Purim</i></b>, which falls on the 14th <i>Adar</i>.</p>
+
+              <p>Confusingly, while the ecclesiastical Jewish year begins with <b>ניסן <i>Nisan</i></b>, the civic year begins with <b>תשרי <i>Tishri</i></b>, so that <b>ראש משנה <i>Rosh ha-Shanah</i></b>, the Jewish new year, occurs on 1st Tishri and therefore usually in the Gregorian month of September.</p>
+
+              <p>Increasingly, as secular Jews with roots outside Israel have become a greater part of the country's population, and partly in the interests of international compatibility, the Gregorian calendar has come into greater use. The names of the Gregorian months in Hebrew are as follows: -</p>
+            </div>
+          
+            <div class="d-flex flex-row flex-wrap justify-content-center w-100">
+              <div *ngFor="let month of hebrewMonthStrings" class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">{{ month.he }}</div>
+                  <div class="time_latin"><i>{{ month.la }}</i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="time-commentary">
+              <p>The seasons of the year in Hebrew are as follows: -</p>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-center w-100">
+              <div *ngFor="let season of seasonStrings" class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">{{ season.he }}</div>
+                  <div class="time_latin"><i>{{ season.la }}</i></div>
+                  <div class="time_latin"><i>{{ season.en }}</i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="time-commentary">
+              <p>Whatever system is used, expressing a calendar date is done simply by saying the "Xth day of" whatever month.</p>
+
+              <p>The number of the civic Jewish year is calculated using <b>תשרי <i>Tishri</i></b> as the first month, and the new Jewish year which starts on 1st Tishri is numbered by taking the Gregorian year number and adding 3,761, so that the Jewish year 5779 begins in September 2018. Bear in minde, though, that the ecclesiastical year with that number already began six months before that. This can lead to some confusion during that period between the two systems, but it is always the month of <b>אדר <i>Adar</i></b> which is repeated.</p>
+
+              <p>Determining whether a year is leap is done by dividing the number of the year in the Jewish calendar by 19 and finding the remainder. If the remainder is 0, 3, 6, 8, 11, 14 or 17, the year is leap. The current 19-year-cycle began on 9th April 2016 (1st Nisan 5776), so that, going forward, the years 5779 (2018-19), 5782 (2021-22), 5784 (2023-24), 5787 (2026-27), 5790 (2029-30) and 5793 (2032-33) will be leap. The next cycle will begin on 10th April 2035.</p>
+
+              <p>Spin the numbers and month selectors on the calendars below to see what date that is in Hebrew, using Gregorian or Jewish systems. Here, the Jewish system uses <b>ניסן <i>Nisan</i></b> as the first month: -</p>
+            </div>
+            
+            <!-- Gregorian Calendar -->
+            <div class="calendar d-flex flex-row align-items-center">
+              <div>
+                <span class="icon fas fa-globe fa-lg"></span>
+              </div>
+              <div class="m-1">
+                  <select class="custom-select select_month" id="monthSelector" [(ngModel)]="chosenMonth" (change)="setMonth()">
+                    <option *ngFor="let month of hebrewMonthStrings" [ngValue]="month">{{ month.en }}</option>
+                  </select>
+              </div>
+              <div class="date_spinner d-flex flex-row align-items-center m-1">
+                <button type="button" class="btn btn-primary date_plus_minus" (click)="decreaseDate()" [disabled]="chosenDate === 1"><b>-</b></button>
+                <input class="date_input"type="text" [(ngModel)]="chosenDate">
+                <button type="button" class="btn btn-primary" (click)="increaseDate()" [disabled]="chosenDate === maximumDate"><b>+</b></button>
+              </div>
+              <div class="d-flex justify-content-center m-1">
+                <div *ngIf="chosenMonth !== undefined" class="alert alert-info m-1 p-1" role="alert">
+                    <div class="d-flex flex-column">
+                      <div class="time_hebrew">{{ hebrewDateText }}</div>
+                      <div class="time_latin"><i>{{ latinDateText }}</i></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Jewish Calendar -->
+            <div class="calendar d-flex flex-row align-items-center">
+              <div>
+                <span class="icon fas fa-menorah"></span>
+              </div>
+              <div class="m-1">
+                  <select class="custom-select select_month" id="monthSelectorJewish" [(ngModel)]="chosenMonthJewish" (change)="setMonthJewish()">
+                    <option *ngFor="let monthJewish of jewishMonthStrings" [ngValue]="monthJewish">{{ monthJewish.la }}</option>
+                  </select>
+              </div>
+              <div class="date_spinner d-flex flex-row align-items-center m-1">
+                <button type="button" class="btn btn-primary date_plus_minus" (click)="decreaseDateJewish()" [disabled]="chosenDateJewish === 1"><b>-</b></button>
+                <input class="date_input"type="text" [(ngModel)]="chosenDateJewish">
+                <button type="button" class="btn btn-primary" (click)="increaseDateJewish()" [disabled]="chosenDateJewish === maximumDateJewish"><b>+</b></button>
+              </div>
+              <div class="d-flex justify-content-center m-1">
+                <div *ngIf="chosenMonthJewish !== undefined" class="alert alert-info m-1 p-1" role="alert">
+                    <div class="d-flex flex-column">
+                      <div class="time_hebrew">{{ hebrewDateTextJewish }}</div>
+                      <div class="time_latin"><i>{{ latinDateTextJewish }}</i></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CLOCK TIME -->
+          <div class="d-flex w-100 flex-column w-md-50 m-1">
+            
+            <div>
+              <h2>
+                <b>Time</b>
+              </h2>
+            </div>
+
+            <div class="d-flex justify-content-center w-100">
+              <div class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">?מה השעה</div>
+                  <div class="time_latin"><i>Mah ha-sha'ah?</i></div>
+                </div>
+              </div>
+              <div class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">...השעה</div>
+                  <div class="time_latin"><i>Ha-sha'ah...</i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="time-commentary">
+                Telling the time in Hebrew is based on saying what hour it is and then qualifying it with phrases to indicate the number of minutes or the portion of an hour past or up to a full hour. The hour is the feminine form of the number, for full hours. You can then follow or precede this with a range of phrases to indicate parts of hours, just as in English: -
+            </div>
+
+            <div class="d-flex justify-content-center w-100">
+              <div class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">ורבע...</div>
+                  <div class="time_latin"><i>...ve-reva'</i></div>
+                  <div class="time_latin">quarter past</div>
+                </div>
+              </div>
+              <div class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">וחצי...</div>
+                  <div class="time_latin"><i>...ve-chatzi</i></div>
+                  <div class="time_latin">half past</div>
+                </div>
+              </div>
+              <div class="alert alert-info m-1 p-1" role="alert">                  
+                <div class="d-flex flex-column">
+                  <div class="time_hebrew">...רבע ל</div>
+                  <div class="time_latin"><i>reva' l...</i></div>
+                  <div class="time_latin">quarter to</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="time-commentary">
+                Spin the numbers on the digital clock below and see what time that is in Hebrew: -
+            </div>
+              
+
+            <div class="clock d-flex flex-row align-items-center">
+              <div>
+                <ngb-timepicker [ngModel]="time" (ngModelChange)="setTimeText($event)"></ngb-timepicker>
+              </div>
+              <div class="d-flex justify-content-center">
+                <div *ngIf="hebrewTimeText !== undefined" class="alert alert-info m-1 p-1" role="alert">
+                  <div class="d-flex flex-column">
+                    <div class="time_hebrew">{{ hebrewTimeText }}</div>
+                    <div class="time_latin"><i>{{ latinTimeText }}</i></div>
+                  </div>
+                  <div *ngIf="hebrewTimeTextAlt2 !== undefined && hebrewTimeTextAlt2 !== ''">or</div>
+                  <div *ngIf="hebrewTimeTextAlt2 !== undefined && hebrewTimeTextAlt2 !== ''" class="time_hebrew">{{ hebrewTimeTextAlt2 }}</div>
+                  <div *ngIf="hebrewTimeTextAlt2 !== undefined && hebrewTimeTextAlt2 !== ''" class="time_latin"><i>{{ latinTimeTextAlt2 }}</i></div>
+                  <div *ngIf="hebrewTimeTextAlt3 !== undefined && hebrewTimeTextAlt3 !== ''">or</div>
+                  <div *ngIf="hebrewTimeTextAlt3 !== undefined && hebrewTimeTextAlt3 !== ''" class="time_hebrew">{{ hebrewTimeTextAlt3 }}</div>
+                  <div *ngIf="hebrewTimeTextAlt3 !== undefined && hebrewTimeTextAlt3 !== ''" class="time_latin"><i>{{ latinTimeTextAlt3 }}</i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="time-commentary">
+                <p>Traditionally, Jews have considered each day to begin at sunset. Celebrations of Jewish high days and holidays often begin in the evening (Friday in the case of the sabbath). However, for official purposes, Israel operates on a midnight-to-midnight basis along with the rest of the world. Israel is either two or three hours ahead of Greenwich Mean Time. As with most other countries outside the tropics, Israel operates daylight saving time. Clocks go forward one hour in Israel at 2am local time on the Friday before the last Sunday in March, and go back one hour at 2am local time on the last Sunday in October. The Gregorian calendar is used to determine these dates (see the section on the right).</p>
+            </div>
+
+            <!-- <div>
+              <h2>
+                <b>Jewish Holidays</b>
+              </h2>
+            </div> -->
+
+            
+
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

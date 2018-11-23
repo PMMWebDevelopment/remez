@@ -1,0 +1,21 @@
+#home {
+    background-image: url('../../assets/images/jerusalem.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+h2 {
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 2px darkblue;
+}

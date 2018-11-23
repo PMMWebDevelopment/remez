@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh !important;
+}
+
+.page-content {
+    min-height: 80vh !important;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 2px darkblue;
+}
+
+.jumbotron {
+    background-color: rgb(255, 255, 255, 0.875)
+}

@@ -1,0 +1,36 @@
+#countries {
+    background-image: url('../../../assets/images/world.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.countries-commentary{
+    text-align: left;
+}
+
+.alert {
+    display: block;
+    min-width: fit-content;
+    height: fit-content;
+}
+
+.country_hebrew,
+.country_latin {
+    color: #003bbf;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.country_hebrew {
+    font-size: 24px;
+}
+
+.country_latin {
+    font-size: 14px;
+}

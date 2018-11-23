@@ -1,0 +1,27 @@
+#verbs {
+    background-image: url('../../../assets/images/eilat.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.jumbotron {
+    width: 100%;
+}
+
+.verb-header {
+    font-size: 20px;
+}
+
+.verb_selector_panel {
+    min-width: 170px !important;
+}
+
+.dropdown-menu {
+    height: 200px !important;
+}
+
+/* #tense-selector {
+    
+} */

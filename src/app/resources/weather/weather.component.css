@@ -1,0 +1,37 @@
+#weather {
+    background-image: url('../../../assets/images/caesarea.jpg');
+    background-position: center center fixed; 
+    background-size: cover;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.weather-commentary{
+    text-align: left;
+}
+
+.alert {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+
+.weather_hebrew,
+.weather_latin {
+    color: #003bbf;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.weather_hebrew {
+    font-size: 24px;
+}
+
+.weather_latin {
+    font-size: 14px;
+}
+

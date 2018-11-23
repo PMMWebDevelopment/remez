@@ -1,0 +1,29 @@
+<div id="countries" class="page-content pb-1">
+  <div id="countries-header" class="container-fluid">
+      <div class="row">
+          <div class="col-md-10 offset-md-1">
+              <h1 class="page-title">Countries in Hebrew</h1>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <div class="row countries-commentary px-1">
+              <p>The alphabet aside, most countries of the world have Hebrew names which aren't all that alien to any foreign learners. There are some countries, however, whose Hebrew names aren't all that obvious. We'll start with a country whose Hebrew name is a <i>little</i> different to how it appears and sounds elsewhere: -</p>
+          </div>
+          <div class="row d-flex flex-row justify-content-around flex-wrap">
+            <div *ngFor="let country of countries" class="alert alert-info m-1 p-1" role="alert">
+              <div class=" d-flex flex-row">
+                <div class="flag_container p-1">
+                  <img src="{{ country.flag }}">
+                </div>
+                <div class="d-flex flex-column">
+                  <div>
+                    <div class="country_hebrew">{{ country.heb }}</div>
+                    <div class="country_latin"><i>{{ country.lat }}</i></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
