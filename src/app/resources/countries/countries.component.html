@@ -13,7 +13,7 @@
             <div *ngFor="let country of countries" class="alert alert-info m-1 p-1" role="alert">
               <div class=" d-flex flex-row">
                 <div class="flag_container p-1">
-                  <img src="{{ country.flag }}">
+                  <img [src]="country.flag">
                 </div>
                 <div class="d-flex flex-column">
                   <div>
